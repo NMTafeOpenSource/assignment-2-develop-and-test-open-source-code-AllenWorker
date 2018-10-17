@@ -23,6 +23,15 @@ namespace CarRentalSystem
         public MainWindow()
         {
             InitializeComponent();
+
+            Vehicle v = new Vehicle("Ford", "T812", 2014);
+
+            // Vehicle sample distance
+            v.AddFuel(new Random().NextDouble() * 10, 1.3);
+
+            v.PrintDetails();
+            Console.WriteLine("\n\n");
+            Console.ReadLine();
         }
     }
 }
