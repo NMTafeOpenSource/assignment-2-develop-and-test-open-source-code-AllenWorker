@@ -21,12 +21,11 @@ namespace CarRentalSystem
     public partial class MainWindow
     {
         List<Vehicle> vehicles;
-        DataTable vehicleDataTable = new DataTable("Vehicles");
-        DataView vehicleDataView;
+
         public MainWindow()
         {
             InitializeComponent();
-            CreateDataTable();
+
             vehicles = new List<Vehicle>();
             vehicles.Add(new Vehicle("Ford", "T812", 2014, "AX12WD", 1000, 2.5));
             vehicles.Add(new Vehicle("BMW", "T49", 2018, "AX12WD", 9000, 5));
@@ -35,19 +34,7 @@ namespace CarRentalSystem
             vehicles.Add(new Vehicle("Ford", "T34", 2016, "AX12WD", 4000, 3.5));
             vehicles.Add(new Vehicle("Ford", "T28", 2015, "AX12WD", 800, 4));
 
-            foreach (Vehicle vehicle in vehicles)
-            {
-                DataRow row;
-                row = vehicleDataTable.NewRow();
-                row["Manufacturer"] = vehicle.Manufacturer;
-                row["Model"] = vehicle.Model;
-                row["MakeYear"] = vehicle.MakeYear;
-                row["RegistrationNumber"] = vehicle.RegistrationNumber;
-                row["OdometerReading"] = vehicle.OdometerReading;
-                row["TankCapacity"] = vehicle.TankCapacity;
-
-                vehicleDataTable.Rows.Add(row);
-            }
+            
             // Vehicle sample distance
 
             /* NOT IN USE
@@ -57,40 +44,10 @@ namespace CarRentalSystem
             Console.WriteLine("\n\n");
             Console.ReadLine();
             */
-            vehicleDataView = new DataView(vehicleDataTable);
-            VehicleDataGrid.DataContext = vehicleDataView;
+            
             VehicleListView.ItemsSource = vehicles;
         }
-        public void CreateDataTable()
-        {
-            vehicleDataTable.Columns.Add("Manufacturer", typeof(String));
-            vehicleDataTable.Columns.Add("Model", typeof(String));
-            vehicleDataTable.Columns.Add("MakeYear", typeof(Int32));
-            vehicleDataTable.Columns.Add("RegistrationNumber", typeof(String));
-            vehicleDataTable.Columns.Add("OdometerReading", typeof(Double));
-            vehicleDataTable.Columns.Add("TankCapacity", typeof(Double));
 
-            /*
-            vehicleDataTable.Columns["Manufacturer"].MaxLength = 10;
-            vehicleDataTable.Columns["Manufacturer"].AllowDBNull = false;
-            vehicleDataTable.Columns["Manufacturer"].Unique = false;
-            */
-        }
-
-        private void VehicleDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            DataGrid dg = (DataGrid)sender;
-            DataRowView drv = dg.SelectedItem as DataRowView;
-            if (drv != null)
-            {
-                txtBlockManufacturer.Text = drv["Manufacturer"].ToString();
-                txtBlockModel.Text = drv["Model"].ToString();
-                txtBlockMakeYear.Text = drv["MakeYear"].ToString();
-                txtBlockRegistrationNumber.Text = drv["RegistrationNumber"].ToString();
-                txtBlockOdometerReading.Text = drv["OdometerReading"].ToString();
-                txtBlockTankCapacity.Text = drv["TankCapacity"].ToString();
-            }
-        }
 
         private void VehicleListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

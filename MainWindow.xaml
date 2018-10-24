@@ -8,6 +8,7 @@
         xmlns:local="clr-namespace:CarRentalSystem"
         mc:Ignorable="d"
         Title="MainWindow" Height="400" Width="600">
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
@@ -30,12 +31,12 @@
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock x:Name="txtBlockManufacturer" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="15" Width="84" Grid.Row="1"><Span Foreground="Black" FontSize="12.6666666666667" FontFamily="Consolas"><Run Text="Manufacturer"/></Span></TextBlock>
-            <TextBlock x:Name="txtBlockModel" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Height="15" Width="35" Grid.Row="1"><Span Foreground="Black" FontSize="12.6666666666667" FontFamily="Consolas"><Run Text="Model"/></Span></TextBlock>
-            <TextBlock x:Name="txtBlockRegistrationNumber" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Grid.Row="3" Height="30" Width="84"><Run FontSize="12.6666666666667" FontFamily="Consolas" Text="Registration"/><Run FontSize="12.6666666666667" FontFamily="Consolas" Text=" "/><Run FontSize="12.6666666666667" FontFamily="Consolas" Text="Number"/></TextBlock>
-            <TextBlock x:Name="txtBlockMakeYear" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="3" Height="15" Width="63"><Run FontSize="12.6666666666667" FontFamily="Consolas" Text="Make"/><Run FontSize="12.6666666666667" FontFamily="Consolas" Text=" "/><Run FontSize="12.6666666666667" FontFamily="Consolas" Text="Year"/></TextBlock>
-            <TextBlock x:Name="txtBlockTankCapacity" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Grid.Row="5" Height="15" Width="91"><Run FontSize="12.6666666666667" FontFamily="Consolas" Text="Tank"/><Run FontSize="12.6666666666667" FontFamily="Consolas" Text=" "/><Run FontSize="12.6666666666667" FontFamily="Consolas" Text="Capacity"/></TextBlock>
-            <TextBlock x:Name="txtBlockOdometerReading" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="5" Height="30" Width="56"><Run FontSize="12.6666666666667" FontFamily="Consolas" Text="Odometer"/><Run FontSize="12.6666666666667" FontFamily="Consolas" Text=" "/><Run FontSize="12.6666666666667" FontFamily="Consolas" Text="Reading"/></TextBlock>
+            <TextBlock x:Name="txtBlockManufacturer" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="15" Width="84" Grid.Row="1"></TextBlock>
+            <TextBlock x:Name="txtBlockModel" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Height="15" Width="35" Grid.Row="1"></TextBlock>
+            <TextBlock x:Name="txtBlockRegistrationNumber" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Grid.Row="3" Height="30" Width="84"></TextBlock>
+            <TextBlock x:Name="txtBlockMakeYear" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="3" Height="15" Width="63"></TextBlock>
+            <TextBlock x:Name="txtBlockTankCapacity" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Grid.Row="5" Height="15" Width="91"></TextBlock>
+            <TextBlock x:Name="txtBlockOdometerReading" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="5" Height="30" Width="56"></TextBlock>
             <Label Content="Manufacturer:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.RowSpan="2" Width="98" Height="26"/>
             <Label Content="Odometer:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.RowSpan="2" Grid.Row="4"/>
             <Label Content="Registration Num.:" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2" Margin="10,10,0,0" Grid.RowSpan="2"/>
@@ -43,40 +44,6 @@
             <Label Content="Model:&#xD;&#xA;" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Column="1" Grid.RowSpan="2" Width="99" Height="26"/>
             <Label Content="Tank Capacity:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Column="1" Grid.Row="4" Grid.RowSpan="2"/>
         </Grid>
-        <DataGrid
-            x:Name="VehicleDataGrid"
-            HorizontalAlignment="Left"
-            Height="283"
-            Margin="10,10,0,0"
-            Grid.Row="1"
-            ItemsSource="{Binding Mode=OneWay}"
-            AutoGenerateColumns="False"
-            VerticalAlignment="Top"
-            Width="335" SelectionChanged="VehicleDataGrid_SelectionChanged" Visibility="Hidden">
-            <DataGrid.Columns>
-                <DataGridTextColumn 
-                    Binding="{Binding Path=Manufacturer}" 
-                    Header="Mfr." 
-                    Width="50"
-                    IsReadOnly="True"/>
-                <DataGridTextColumn 
-                    Binding="{Binding Path=Model}" 
-                    Header="Model" 
-                    Width="70"
-                    IsReadOnly="True" />
-                <DataGridTextColumn 
-                    Binding="{Binding Path=MakeYear}" 
-                    Header="Year" 
-                    Width="60"
-                    IsReadOnly="True" />
-                <DataGridTextColumn 
-                    Binding="{Binding Path=RegistrationNumber}" 
-                    Header="Registration Num." 
-                    Width="150"
-                    IsReadOnly="True" />
-
-            </DataGrid.Columns>
-        </DataGrid>
         <ListView x:Name="VehicleListView" SelectionMode="Single" HorizontalAlignment="Left" Height="283" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="335" ItemsSource="{Binding Mode=OneWay}" SelectionChanged="VehicleListView_SelectionChanged">
             <ListView.View>
                 <GridView>

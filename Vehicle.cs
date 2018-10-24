@@ -51,7 +51,11 @@ namespace CarRentalSystem
 
         // TODO Create an addKilometers method which takes a parameter for distance travelled 
         // and adds it to the odometer reading. 
-
+        public void AddJourney(double km)
+        {
+            journey.AddKilometers(km);
+            OdometerReading += km;
+        }
 
         // adds fuel to the car
         // check tank cap
