@@ -8,14 +8,15 @@ namespace CarRentalSystem
 {
     class Vehicle
     {
-        private string manufacturer;
-        private string model;
-        private int makeYear;
-        // TODO add Registration Number 
-        // TODO add variable for OdometerReading (in KM), 
-        // TODO add variable for TankCapacity (in litres)
+        public string Manufacturer { get; set; }
+        public string Model { get; set; }
+        public int MakeYear { get; set; }
+        public string RegistrationNumber { get; set; }
+        public double OdometerReading { get; set; }
+        public double TankCapacity { get; set; }
 
         private FuelPurchase fuelPurchase;
+        private Journey journey;
 
         /**
 	     * Class constructor specifying name of make (manufacturer), model and year
@@ -24,12 +25,16 @@ namespace CarRentalSystem
 	     * @param model
 	     * @param makeYear
 	     */
-        public Vehicle(string manufacturer, string model, int makeYear)
+        public Vehicle(string Manufacturer, string Model, int MakeYear, string RegistrationNumber, double OdometerReading, double TankCapacity)
         {
-            this.manufacturer = manufacturer;
-            this.model = model;
-            this.makeYear = makeYear;
+            this.Manufacturer = Manufacturer;
+            this.Model = Model;
+            this.MakeYear = MakeYear;
+            this.RegistrationNumber = RegistrationNumber;
+            this.OdometerReading = OdometerReading;
+            this.TankCapacity = TankCapacity;
             fuelPurchase = new FuelPurchase();
+            journey = new Journey();
         }
 
         // TODO Add missing getter and setter methods
@@ -39,7 +44,7 @@ namespace CarRentalSystem
          */
         public void PrintDetails()
         {
-            Console.WriteLine("Vehicle: " + makeYear + " " + manufacturer + " " + model);
+            Console.WriteLine("Vehicle: " + MakeYear + " " + Manufacturer + " " + Model);
             // TODO Display additional information about this vehicle
         }
 
@@ -47,10 +52,15 @@ namespace CarRentalSystem
         // TODO Create an addKilometers method which takes a parameter for distance travelled 
         // and adds it to the odometer reading. 
 
+
         // adds fuel to the car
+        // check tank cap
+
         public void AddFuel(double litres, double price)
         {
             fuelPurchase.PurchaseFuel(litres, price);
         }
+
+        
     }
 }

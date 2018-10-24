@@ -9,29 +9,31 @@ namespace CarRentalSystem
     class FuelPurchase
     {
         private double fuelEconomy;
-        private double litres = 0;
-        private double cost = 0;
+        public double Litres { get; set; }
+        public double Cost { get; set; }
 
-        public double GetFuelEconomy()
+        public FuelPurchase()
         {
-            return fuelEconomy;
-            //return this.cost / this.litres;
+            Litres = 0;
+            Cost = 0;
         }
 
-        public double GetFuel()
+        public double FuelEconomy
         {
-            return this.litres;
+            get { return Cost / Litres; }
         }
 
+        /*  NOT IN USE
         public void SetFuelEconomy(double fuelEconomy)
         {
-            this.fuelEconomy = fuelEconomy;
+            this.FuelEconomy = fuelEconomy;
         }
+        */
 
         public void PurchaseFuel(double amount, double price)
         {
-            this.litres += amount;
-            this.cost += price;
+            this.Litres += amount;
+            this.Cost += price;
         }
     }
 }

@@ -8,34 +8,27 @@ namespace CarRentalSystem
 {
     class Journey
     {
-        private double kilometers;
+        public double Kilometers { get; set; }
 
         /**
 	     * Class constructor
 	     */
         public Journey()
         {
-            this.kilometers = 0;
+            Kilometers = 0;
         }
 
         /** 
 	     * Appends the distance parameter to {@link #kilometers}
 	     * @param kilometers the distance traveled 
 	     */
-        public void AddKilometers(double kilometers)
+        public void AddKilometers(double Kilometers)
         {
-            this.kilometers += kilometers;
+            this.Kilometers += Kilometers;
         }
 
 
 
-        /**
-	     * Getter method for total Kilometers traveled in this journey.
-	     * @return {@link #kilometers}
-	     */
-        public double GetKilometers()
-        {
-            return kilometers;
-        }
+
     }
 }
