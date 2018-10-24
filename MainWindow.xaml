@@ -52,7 +52,7 @@
             ItemsSource="{Binding Mode=OneWay}"
             AutoGenerateColumns="False"
             VerticalAlignment="Top"
-            Width="335" SelectionChanged="VehicleDataGrid_SelectionChanged">
+            Width="335" SelectionChanged="VehicleDataGrid_SelectionChanged" Visibility="Hidden">
             <DataGrid.Columns>
                 <DataGridTextColumn 
                     Binding="{Binding Path=Manufacturer}" 
@@ -77,6 +77,16 @@
 
             </DataGrid.Columns>
         </DataGrid>
+        <ListView x:Name="VehicleListView" SelectionMode="Single" HorizontalAlignment="Left" Height="283" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="335" ItemsSource="{Binding Mode=OneWay}" SelectionChanged="VehicleListView_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Mfr." Width="50" DisplayMemberBinding="{Binding Path=Manufacturer}"/>
+                    <GridViewColumn Header="Model" Width="70" DisplayMemberBinding="{Binding Path=Model}"/>
+                    <GridViewColumn Header="Year" Width="60" DisplayMemberBinding="{Binding Path=MakeYear}"/>
+                    <GridViewColumn Header="Registration Num." Width="150" DisplayMemberBinding="{Binding Path=RegistrationNumber}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
 
     </Grid>
 </Controls:MetroWindow >

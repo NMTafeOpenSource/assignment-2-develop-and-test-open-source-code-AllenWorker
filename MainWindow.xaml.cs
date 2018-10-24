@@ -59,6 +59,7 @@ namespace CarRentalSystem
             */
             vehicleDataView = new DataView(vehicleDataTable);
             VehicleDataGrid.DataContext = vehicleDataView;
+            VehicleListView.ItemsSource = vehicles;
         }
         public void CreateDataTable()
         {
@@ -88,6 +89,20 @@ namespace CarRentalSystem
                 txtBlockRegistrationNumber.Text = drv["RegistrationNumber"].ToString();
                 txtBlockOdometerReading.Text = drv["OdometerReading"].ToString();
                 txtBlockTankCapacity.Text = drv["TankCapacity"].ToString();
+            }
+        }
+
+        private void VehicleListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Vehicle ve = (Vehicle)VehicleListView.SelectedItem;
+            if (ve != null)
+            {
+                txtBlockManufacturer.Text = ve.Manufacturer.ToString();
+                txtBlockModel.Text = ve.Model.ToString();
+                txtBlockMakeYear.Text = ve.MakeYear.ToString();
+                txtBlockRegistrationNumber.Text = ve.RegistrationNumber.ToString();
+                txtBlockOdometerReading.Text = ve.OdometerReading.ToString();
+                txtBlockTankCapacity.Text = ve.TankCapacity.ToString();
             }
         }
     }
