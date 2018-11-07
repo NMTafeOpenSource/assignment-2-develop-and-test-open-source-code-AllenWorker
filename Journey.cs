@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CarRentalSystem
 {
-    class Journey
+    public class Journey
     {
         public double Kilometers { get; set; }
 

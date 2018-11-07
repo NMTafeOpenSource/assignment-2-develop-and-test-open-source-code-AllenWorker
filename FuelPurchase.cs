@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CarRentalSystem
 {
-    class FuelPurchase
+    public class FuelPurchase
     {
         private double fuelEconomy;
         public double Litres { get; set; }

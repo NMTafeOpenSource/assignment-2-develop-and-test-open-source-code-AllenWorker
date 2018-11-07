@@ -62,5 +62,34 @@ namespace CarRentalSystem
                 txtBlockTankCapacity.Text = ve.TankCapacity.ToString();
             }
         }
+
+        private void addJourneyButton_Click(object sender, RoutedEventArgs e)
+        {
+            Vehicle ve = (Vehicle)VehicleListView.SelectedItem;
+            AddJourney addJourney = new AddJourney("Add Journey");
+            if (addJourney.ShowDialog() == true)
+            {
+                // TODO Journey add to selected Vehicle
+                ve.AddJourney(addJourney.Result);
+                txtBlockOdometerReading.Text = ve.OdometerReading.ToString();
+            }
+        }
+
+        private void addFuelButton_Click(object sender, RoutedEventArgs e)
+        {
+            Vehicle ve = (Vehicle)VehicleListView.SelectedItem;
+            AddFuel addFuel = new AddFuel("Add Fuel(by Litre) and Price");
+            if (addFuel.ShowDialog() == true)
+            {
+                ve.AddFuel(addFuel.Fuel, addFuel.Price);
+            }
+        }
+
+        private void calculateButton_Click(object sender, RoutedEventArgs e)
+        {
+            Vehicle ve = (Vehicle)VehicleListView.SelectedItem;
+            CalculatePrice calculatePrice = new CalculatePrice(ve);
+            calculatePrice.ShowDialog();
+        }
     }
 }

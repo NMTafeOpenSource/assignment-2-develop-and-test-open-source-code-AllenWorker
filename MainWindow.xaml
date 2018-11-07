@@ -7,8 +7,9 @@
         xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:local="clr-namespace:CarRentalSystem"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="600">
-    
+        Title="MainWindow" Height="400" Width="600"
+        WindowStartupLocation="CenterScreen">
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
@@ -41,10 +42,10 @@
             <Label Content="Odometer:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.RowSpan="2" Grid.Row="4"/>
             <Label Content="Registration Num.:" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2" Margin="10,10,0,0" Grid.RowSpan="2"/>
             <Label Content="Make Year:" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="2" Margin="10,10,0,0" Grid.RowSpan="2"/>
-            <Label Content="Model:&#xD;&#xA;" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Column="1" Grid.RowSpan="2" Width="99" Height="26"/>
+            <Label Content="Model:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Column="1" Grid.RowSpan="2" Width="99" Height="26"/>
             <Label Content="Tank Capacity:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Column="1" Grid.Row="4" Grid.RowSpan="2"/>
         </Grid>
-        <ListView x:Name="VehicleListView" SelectionMode="Single" HorizontalAlignment="Left" Height="283" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="335" ItemsSource="{Binding Mode=OneWay}" SelectionChanged="VehicleListView_SelectionChanged">
+        <ListView x:Name="VehicleListView" SelectionMode="Single" HorizontalAlignment="Left" Height="283" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="335" ItemsSource="{Binding Mode=OneWay}" SelectionChanged="VehicleListView_SelectionChanged" SelectedIndex="0">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Mfr." Width="50" DisplayMemberBinding="{Binding Path=Manufacturer}"/>
@@ -54,6 +55,9 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <Button x:Name="addJourneyButton" Content="Add Journey" Grid.Column="1" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" Width="90" Click="addJourneyButton_Click"/>
+        <Button x:Name="addFuelButton" Content="Add Fuel" Grid.Column="1" HorizontalAlignment="Left" Margin="137,20,0,0" VerticalAlignment="Top" Width="90" Click="addFuelButton_Click"/>
+        <Button x:Name="calculateButton" Content="Calculate" HorizontalAlignment="Left" Margin="230,20,0,0" VerticalAlignment="Top" Width="75" Click="calculateButton_Click"/>
 
     </Grid>
 </Controls:MetroWindow >

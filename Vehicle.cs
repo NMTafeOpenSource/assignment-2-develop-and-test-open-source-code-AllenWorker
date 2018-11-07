@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CarRentalSystem
 {
-    class Vehicle
+    public class Vehicle
     {
         public string Manufacturer { get; set; }
         public string Model { get; set; }
@@ -15,8 +15,9 @@ namespace CarRentalSystem
         public double OdometerReading { get; set; }
         public double TankCapacity { get; set; }
 
-        private FuelPurchase fuelPurchase;
-        private Journey journey;
+        public FuelPurchase FuelPurchase { get; set; }
+        public Journey Journey { get; set; }
+        public Service Service { get; set; }
 
         /**
 	     * Class constructor specifying name of make (manufacturer), model and year
@@ -33,19 +34,9 @@ namespace CarRentalSystem
             this.RegistrationNumber = RegistrationNumber;
             this.OdometerReading = OdometerReading;
             this.TankCapacity = TankCapacity;
-            fuelPurchase = new FuelPurchase();
-            journey = new Journey();
-        }
-
-        // TODO Add missing getter and setter methods
-
-        /**
-         * Prints details for {@link Vehicle}
-         */
-        public void PrintDetails()
-        {
-            Console.WriteLine("Vehicle: " + MakeYear + " " + Manufacturer + " " + Model);
-            // TODO Display additional information about this vehicle
+            FuelPurchase = new FuelPurchase();
+            Journey = new Journey();
+            Service = new Service(OdometerReading);
         }
 
 
@@ -53,7 +44,7 @@ namespace CarRentalSystem
         // and adds it to the odometer reading. 
         public void AddJourney(double km)
         {
-            journey.AddKilometers(km);
+            Journey.AddKilometers(km);
             OdometerReading += km;
         }
 
@@ -62,7 +53,7 @@ namespace CarRentalSystem
 
         public void AddFuel(double litres, double price)
         {
-            fuelPurchase.PurchaseFuel(litres, price);
+            FuelPurchase.PurchaseFuel(litres, price);
         }
 
         
