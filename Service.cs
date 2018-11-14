@@ -8,13 +8,17 @@ namespace CarRentalSystem
 {
     public class Service
     {
-        // Constant to indicate that the vehicle needs to be serviced every 10,000km
+        // Constant to indicate that the vehicle needs to be serviced every 100km
         public static readonly int SERVICE_KILOMETER_LIMIT = 100;
 
         private double lastServiceOdometerKm = 0;
         private int serviceCount = 0;
-        private DateTime lastServiceDate = new DateTime(10,10,10);
+        private DateTime lastServiceDate = new DateTime(10,10,10); //Default Date
 
+        /// <summary>
+        /// Class Constructor
+        /// </summary>
+        /// <param name="lastServiceOdometerKm"></param>
         public Service( double lastServiceOdometerKm)
         {
             this.lastServiceOdometerKm = lastServiceOdometerKm;

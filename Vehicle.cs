@@ -19,13 +19,17 @@ namespace CarRentalSystem
         public Journey Journey { get; set; }
         public Service Service { get; set; }
 
-        /**
-	     * Class constructor specifying name of make (manufacturer), model and year
-	     * of make.
-	     * @param manufacturer
-	     * @param model
-	     * @param makeYear
-	     */
+        /// <summary>
+        /// Class constructor specifying name of Manufacturer, Model, MakeYear, RegistrationNumber, OdometerReading,
+        /// TankCapacity, lastServiceOdometerKm
+        /// </summary>
+        /// <param name="Manufacturer"></param>
+        /// <param name="Model"></param>
+        /// <param name="MakeYear"></param>
+        /// <param name="RegistrationNumber"></param>
+        /// <param name="OdometerReading"></param>
+        /// <param name="TankCapacity"></param>
+        /// <param name="lastServiceOdometerKm"></param>
         public Vehicle(string Manufacturer, string Model, int MakeYear, string RegistrationNumber, double OdometerReading, double TankCapacity, double lastServiceOdometerKm)
         {
             this.Manufacturer = Manufacturer;
@@ -40,17 +44,22 @@ namespace CarRentalSystem
         }
 
 
-        // TODO Create an addKilometers method which takes a parameter for distance travelled 
-        // and adds it to the odometer reading. 
+        /// <summary>
+        /// Add how far the car has driven to Journey and OdoneterReading
+        /// </summary>
+        /// <param name="km"></param>
         public void AddJourney(double km)
         {
             Journey.AddKilometers(km);
             OdometerReading += km;
         }
 
-        // adds fuel to the car
-        // check tank cap
-
+        
+        /// <summary>
+        /// Add Fuel and Price to FuelPurchase class
+        /// </summary>
+        /// <param name="litres"></param>
+        /// <param name="price"></param>
         public void AddFuel(double litres, double price)
         {
             FuelPurchase.PurchaseFuel(litres, price);

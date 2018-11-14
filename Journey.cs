@@ -10,18 +10,20 @@ namespace CarRentalSystem
     {
         public double Kilometers { get; set; }
 
-        /**
-	     * Class constructor
-	     */
+        /// <summary>
+        /// Class Constructor
+        /// </summary>
         public Journey()
         {
             Kilometers = 0;
         }
 
-        /** 
-	     * Appends the distance parameter to {@link #kilometers}
-	     * @param kilometers the distance traveled 
-	     */
+
+
+        /// <summary>
+        /// Appends the distance parameter to Kilometers
+        /// </summary>
+        /// <param name="Kilometers"></param>
         public void AddKilometers(double Kilometers)
         {
             this.Kilometers += Kilometers;

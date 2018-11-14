@@ -33,15 +33,6 @@ namespace CarRentalSystem
             vehicles.Add(new Vehicle("Toyota", "T54E3", 2008, "AX12WD", 2500, 1.5, 600));
             vehicles.Add(new Vehicle("Ford", "T34", 2016, "AX12WD", 4000, 3.5, 2500));
             vehicles.Add(new Vehicle("Ford", "T28", 2015, "AX12WD", 800, 4, 100));
-            // Vehicle sample distance
-
-            /* NOT IN USE
-            v.AddFuel(new Random().NextDouble() * 10, 1.3);
-
-            v.PrintDetails();
-            Console.WriteLine("\n\n");
-            Console.ReadLine();
-            */
             
             VehicleListView.ItemsSource = vehicles;
         }

@@ -35,6 +35,9 @@ namespace CarRentalSystem
             textblockTotal.Text = total.ToString();
         }
 
+        /// <summary>
+        /// Initialize data
+        /// </summary>
         public void Initializedata()
         {
             textblockMFR.Text = selectedVehicle.Manufacturer;

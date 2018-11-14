@@ -6,18 +6,25 @@ using System.Threading.Tasks;
 
 namespace CarRentalSystem
 {
-    class CalculateRentalPrice
+    public class CalculateRentalPrice
     {
         public double Distance { get; private set; }
         public double FuelCost { get; private set; }
         public double PriceByKm { get; set; }
 
+        /// <summary>
+        /// Class Constructor
+        /// </summary>
         public CalculateRentalPrice(double distance, double fuelCost)
         {
             Distance = distance;
             FuelCost = fuelCost;
         }
 
+        /// <summary>
+        /// Calculate the total rental price
+        /// </summary>
+        /// <returns>Total price</returns>
         public double Calculate()
         {
             double result=0;

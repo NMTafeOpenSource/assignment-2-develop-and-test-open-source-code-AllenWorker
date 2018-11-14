@@ -21,6 +21,7 @@ namespace CarRentalSystem
     public partial class AddJourney
     {
         public double Result { get; set; }
+
         public AddJourney(string message)
         {
             InitializeComponent();

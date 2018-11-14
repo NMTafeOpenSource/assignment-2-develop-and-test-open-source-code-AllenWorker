@@ -8,10 +8,12 @@ namespace CarRentalSystem
 {
     public class FuelPurchase
     {
-        private double fuelEconomy;
         public double Litres { get; set; }
         public double Cost { get; set; }
 
+        /// <summary>
+        /// Class Constructor
+        /// </summary>
         public FuelPurchase()
         {
             Litres = 0;
@@ -23,13 +25,11 @@ namespace CarRentalSystem
             get { return Cost / Litres; }
         }
 
-        /*  NOT IN USE
-        public void SetFuelEconomy(double fuelEconomy)
-        {
-            this.FuelEconomy = fuelEconomy;
-        }
-        */
-
+        /// <summary>
+        /// Add Fuel and Price to the total purchased
+        /// </summary>
+        /// <param name="amount"></param>
+        /// <param name="price"></param>
         public void PurchaseFuel(double amount, double price)
         {
             this.Litres += amount;

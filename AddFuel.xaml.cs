@@ -46,7 +46,7 @@ namespace CarRentalSystem
 
         private void Window_ContentRendered(object sender, EventArgs e)
         {
-           fuelTextbox.SelectAll();
+            fuelTextbox.SelectAll();
             fuelTextbox.Focus();
         }
 

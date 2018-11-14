@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 namespace CarRentalSystem
 {
     /// <summary>
-    /// Detail.xaml 的互動邏輯
+    /// Interaction logic for Detail.xaml
     /// </summary>
     public partial class Detail
     {
@@ -29,7 +29,9 @@ namespace CarRentalSystem
         }
 
 
-
+        /// <summary>
+        ///  Initialize data and show on screen
+        /// </summary>
         public void Initializedata()
         {
             textblockMFR.Text = selectedVehicle.Manufacturer;
