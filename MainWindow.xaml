@@ -58,6 +58,7 @@
         <Button x:Name="addJourneyButton" Content="Add Journey" Grid.Column="1" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" Width="90" Click="addJourneyButton_Click"/>
         <Button x:Name="addFuelButton" Content="Add Fuel" Grid.Column="1" HorizontalAlignment="Left" Margin="137,20,0,0" VerticalAlignment="Top" Width="90" Click="addFuelButton_Click"/>
         <Button x:Name="calculateButton" Content="Calculate" HorizontalAlignment="Left" Margin="230,20,0,0" VerticalAlignment="Top" Width="75" Click="calculateButton_Click"/>
+        <Button x:Name="detailButton" Content="Vehicle Detail" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="113" Height="47" Click="detailButton_Click"/>
 
     </Grid>
 </Controls:MetroWindow >

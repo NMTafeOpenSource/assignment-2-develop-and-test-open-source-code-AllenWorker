@@ -44,7 +44,7 @@ namespace CarRentalSystem
             textblockDistance.Text = selectedVehicle.Journey.Kilometers.ToString();
             textblockFuelRefilled.Text = selectedVehicle.FuelPurchase.Litres.ToString();
             textblockFuelCost.Text = selectedVehicle.FuelPurchase.Cost.ToString();
-            textblockFuelEco.Text = selectedVehicle.FuelPurchase.FuelEconomy.ToString();
+            textblockFuelEco.Text = (double.IsNaN(selectedVehicle.FuelPurchase.FuelEconomy)) ? "0" : selectedVehicle.FuelPurchase.FuelEconomy.ToString();
 
         }
     }

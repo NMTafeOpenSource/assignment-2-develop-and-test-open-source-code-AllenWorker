@@ -26,7 +26,7 @@ namespace CarRentalSystem
 	     * @param model
 	     * @param makeYear
 	     */
-        public Vehicle(string Manufacturer, string Model, int MakeYear, string RegistrationNumber, double OdometerReading, double TankCapacity)
+        public Vehicle(string Manufacturer, string Model, int MakeYear, string RegistrationNumber, double OdometerReading, double TankCapacity, double lastServiceOdometerKm)
         {
             this.Manufacturer = Manufacturer;
             this.Model = Model;
@@ -36,7 +36,7 @@ namespace CarRentalSystem
             this.TankCapacity = TankCapacity;
             FuelPurchase = new FuelPurchase();
             Journey = new Journey();
-            Service = new Service(OdometerReading);
+            Service = new Service(lastServiceOdometerKm);
         }
 
 

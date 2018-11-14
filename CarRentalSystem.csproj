@@ -88,6 +88,9 @@
       <DependentUpon>CalculatePrice.xaml</DependentUpon>
     </Compile>
     <Compile Include="CalculateRentalPrice.cs" />
+    <Compile Include="Detail.xaml.cs">
+      <DependentUpon>Detail.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FuelPurchase.cs" />
     <Compile Include="Journey.cs" />
     <Compile Include="Service.cs" />
@@ -100,6 +103,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CalculatePrice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Detail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

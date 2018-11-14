@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace CarRentalSystem
 {
@@ -19,6 +20,9 @@ namespace CarRentalSystem
     /// </summary>
     public partial class AddFuel
     {
+        public double Fuel { get; set; }
+        public double Price { get; set; }
+
         public AddFuel(string message)
         {
             InitializeComponent();
@@ -27,7 +31,17 @@ namespace CarRentalSystem
 
         private void confirmButton_Click(object sender, RoutedEventArgs e)
         {
-            this.DialogResult = true;
+            try
+            {
+                Fuel = Convert.ToDouble(fuelTextbox.Text);
+                Price = Convert.ToDouble(priceTextbox.Text);
+                this.DialogResult = true;
+            }
+            catch (FormatException)
+            {
+                this.ShowMessageAsync("Alert!", "Only Numbers are allowed!");
+            }
+            
         }
 
         private void Window_ContentRendered(object sender, EventArgs e)
@@ -36,14 +50,5 @@ namespace CarRentalSystem
             fuelTextbox.Focus();
         }
 
-        public double Fuel
-        {
-            get { return Convert.ToDouble(fuelTextbox.Text); }
-        }
-
-        public double Price
-        {
-            get { return Convert.ToDouble(priceTextbox.Text); }
-        }
     }
 }

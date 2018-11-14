@@ -27,14 +27,12 @@ namespace CarRentalSystem
             InitializeComponent();
 
             vehicles = new List<Vehicle>();
-            vehicles.Add(new Vehicle("Ford", "T812", 2014, "AX12WD", 1000, 2.5));
-            vehicles.Add(new Vehicle("BMW", "T49", 2018, "AX12WD", 9000, 5));
-            vehicles.Add(new Vehicle("Ford", "T26E5", 2013, "AX12WD", 1500, 3));
-            vehicles.Add(new Vehicle("Toyota", "T54E3", 2008, "AX12WD", 2500, 1.5));
-            vehicles.Add(new Vehicle("Ford", "T34", 2016, "AX12WD", 4000, 3.5));
-            vehicles.Add(new Vehicle("Ford", "T28", 2015, "AX12WD", 800, 4));
-
-            
+            vehicles.Add(new Vehicle("Ford", "T812", 2014, "AX12WD", 1000, 2.5, 500));
+            vehicles.Add(new Vehicle("BMW", "T49", 2018, "AX12WD", 9000, 5, 3000));
+            vehicles.Add(new Vehicle("Ford", "T26E5", 2013, "AX12WD", 1500, 3, 1000));
+            vehicles.Add(new Vehicle("Toyota", "T54E3", 2008, "AX12WD", 2500, 1.5, 600));
+            vehicles.Add(new Vehicle("Ford", "T34", 2016, "AX12WD", 4000, 3.5, 2500));
+            vehicles.Add(new Vehicle("Ford", "T28", 2015, "AX12WD", 800, 4, 100));
             // Vehicle sample distance
 
             /* NOT IN USE
@@ -66,7 +64,7 @@ namespace CarRentalSystem
         private void addJourneyButton_Click(object sender, RoutedEventArgs e)
         {
             Vehicle ve = (Vehicle)VehicleListView.SelectedItem;
-            AddJourney addJourney = new AddJourney("Add Journey");
+            AddJourney addJourney = new AddJourney("Add Journey(km)");
             if (addJourney.ShowDialog() == true)
             {
                 // TODO Journey add to selected Vehicle
@@ -90,6 +88,13 @@ namespace CarRentalSystem
             Vehicle ve = (Vehicle)VehicleListView.SelectedItem;
             CalculatePrice calculatePrice = new CalculatePrice(ve);
             calculatePrice.ShowDialog();
+        }
+
+        private void detailButton_Click(object sender, RoutedEventArgs e)
+        {
+            Vehicle ve = (Vehicle)VehicleListView.SelectedItem;
+            Detail detail = new Detail(ve);
+            detail.ShowDialog();
         }
     }
 }

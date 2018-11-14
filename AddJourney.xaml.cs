@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace CarRentalSystem
 {
@@ -19,6 +20,7 @@ namespace CarRentalSystem
     /// </summary>
     public partial class AddJourney
     {
+        public double Result { get; set; }
         public AddJourney(string message)
         {
             InitializeComponent();
@@ -27,18 +29,21 @@ namespace CarRentalSystem
 
         private void confirmButton_Click(object sender, RoutedEventArgs e)
         {
-            this.DialogResult = true;
+            try
+            {
+                Result = Convert.ToDouble(inputTextbox.Text);
+                this.DialogResult = true;
+            }
+            catch (FormatException)
+            {
+                this.ShowMessageAsync("Alert!", "Only Number are allowed!");
+            }
         }
 
         private void Window_ContentRendered(object sender, EventArgs e)
         {
             inputTextbox.SelectAll();
             inputTextbox.Focus();
-        }
-
-        public double Result
-        {
-            get { return Convert.ToDouble(inputTextbox.Text); }
         }
     }
 }
