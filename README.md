@@ -9,9 +9,7 @@ Easily clone or download and open with Visual Studio.
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **AllenWorker** - *Initial work* - [AllenWorker](https://github.com/AllenWorker)
 
 ## License
 
