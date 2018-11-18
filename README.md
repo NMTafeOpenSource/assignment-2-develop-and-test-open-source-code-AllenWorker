@@ -1,7 +1,16 @@
-# Assignment2-OSStarterCode
-Starter code for assignment 2 of the Open Source and Testing course.
+# CarRentalSystem
 
-This repository contains the classes for the vehicle rental system.
-You can modify and extend the existing code as well as add new classes to make the application functional and user-friendly.
-The User Interface can be either GUI or console based.
-Git source control must be used to track different versions of the application over time.
+A prototype for CarRentalSystem project. This project is for developing a more efficient way to manage cars from exist system. Sample Data is hard-coded in program at this point and only demostrate major requirement.
+
+## Getting Started
+
+Easily clone or download and open with Visual Studio.
+
+
+## Authors
+
+* **AllenWorker** - *Initial work* - [AllenWorker](https://github.com/AllenWorker)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
