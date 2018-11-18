@@ -1,6 +1,6 @@
 # CarRentalSystem
 
-A prototype for CarRentalSystem project. This project is for developing a more efficient way to manage cars form exist system. Sample Data is hard-coded in program at this point and only demostrate major requirement.
+A prototype for CarRentalSystem project. This project is for developing a more efficient way to manage cars from exist system. Sample Data is hard-coded in program at this point and only demostrate major requirement.
 
 ## Getting Started
 
